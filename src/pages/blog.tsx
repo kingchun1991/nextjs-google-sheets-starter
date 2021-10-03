@@ -1,18 +1,21 @@
 import { GetStaticProps } from "next";
-import Card from "components/layout/Card";
+// import Card from "components/layout/Card";
+import Card2 from "components/layout/Card2";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const csv2json = require("csvtojson");
 
 function Blog(props: any) {
   const data = props;
   return (
-    <ul>
+    <SimpleGrid columns={[2, null, 2]} spacing="40px">
+      {/* <Card2 /> */}
       {data.records.map((record: any) => {
         // console.log("Entered");
         // Return the element. Also pass key
-        return <Card title={record.title_en} imgSrc={record.imgSrc} />;
+        return <Card2 title={record.title_en} imgSrc={record.imgSrc} />;
       })}
-    </ul>
+    </SimpleGrid>
   );
 }
 
