@@ -1,8 +1,10 @@
 {
   "extends": [
     "sznm/react",
-    "plugin:react/jsx-runtime"
-    // ,
-    // "plugin:@next/next/recommended"
-  ]
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0
+  }
 }
