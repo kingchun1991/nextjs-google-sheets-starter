@@ -1,6 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-const csv2json = require('csvtojson');
-import Card from 'components/layout/Card'
+import { GetStaticProps } from "next"
+import Card from "components/layout/Card"
 
 
 function Blog(props: any) {
@@ -21,9 +20,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     // const props = fetch(url + '&single=true&output=csv&headers=0')
     const csv = '&single=true&output=csv&headers=0';
     const skipFirstRow = '&range=A2:ZZ';
-    const result = await fetch(url + csv + skipFirstRow)
-    const data = await result.text()
-    const records = await csv2json().fromString(data)
+    const result = await fetch(url + csv + skipFirstRow);
+    const data = await result.text();
+    const csv2json = require("csvtojson");
+    const records = await csv2json().fromString(data);
     // console.log(data)
     // console.log(props)
     // console.log(records)
