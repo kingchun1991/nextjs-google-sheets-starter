@@ -2,10 +2,11 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 const csv2json = require('csvtojson');
 import Card from 'components/layout/Card'
 
-function Blog(props) {
+
+function Blog(props: any) {
     return (
       <ul>
-        {props.records.map((record, i) => {     
+        {props.records.map((record: any) => {     
         //    console.log("Entered");                 
            // Return the element. Also pass key     
            return (<Card title={record.title_en} imgSrc={record.imgSrc}/>) 
