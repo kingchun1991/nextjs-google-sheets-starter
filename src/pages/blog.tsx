@@ -8,7 +8,7 @@ const csv2json = require("csvtojson");
 function Blog(props: any) {
   const data = props;
   return (
-    <SimpleGrid columns={[1, null, 2]} spacing="40px">
+    <SimpleGrid columns={[1, 2, 3]}  spacing="40px">
       {/* <Card2 /> */}
       {data.records.map((record: any) => {
         // console.log("Entered");
