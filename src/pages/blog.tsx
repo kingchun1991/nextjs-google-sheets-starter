@@ -4,11 +4,11 @@ import Card from "components/layout/Card";
 const csv2json = require("csvtojson");
 
 function Blog(props: any) {
-  const records = props;
+  const data = props;
   return (
     <ul>
-      {records.map((record: any) => {
-        //    console.log("Entered");
+      {data.records.map((record: any) => {
+        // console.log("Entered");
         // Return the element. Also pass key
         return <Card title={record.title_en} imgSrc={record.imgSrc} />;
       })}
