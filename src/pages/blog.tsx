@@ -11,13 +11,14 @@ function Blog(props: any) {
     <SimpleGrid columns={[1, 2, 3]} spacing="40px">
       {/* <Card2 /> */}
       {data.records.map((record: any) => {
-        // console.log("Entered");
+        // console.log(record.id);
         // Return the element. Also pass key
         return (
           <Card2
             key={record.id}
             title={record.title_en}
             imgSrc={record.imgSrc}
+            url={record.id}
           />
         );
       })}

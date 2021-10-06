@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
+import Link from "next/link";
 
 const data = {
   isNew: true,
@@ -98,7 +99,7 @@ function ProductAddToCart(props: any) {
               lineHeight="tight"
               isTruncated
             >
-              {data2.title}
+              <Link href={`/blog/${data2.url}`}>{data2.title}</Link>
             </Box>
             <Tooltip
               label="Add to cart"
