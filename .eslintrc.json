@@ -5,6 +5,7 @@
     "plugin:@next/next/recommended"
   ],
   "rules": {
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "jsx-a11y/anchor-is-valid":"off"
   }
 }
