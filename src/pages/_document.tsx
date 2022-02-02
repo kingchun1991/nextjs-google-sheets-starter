@@ -1,29 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-<<<<<<< HEAD
-/**
- * @todo: remove this comment below when ready
- * ref: https://github.com/vercel/next.js/issues/13712#issuecomment-910409023
- * */
-import createEmotionServer from "@emotion/server/create-instance";
-// eslint-disable-next-line @next/next/no-document-import-in-page
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
-import * as React from "react";
-
-import createEmotionCache from "styles/createEmotionCache";
-=======
 import createEmotionServer from "@emotion/server/create-instance";
 import type { DocumentContext } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import * as React from "react";
 
 import createEmotionCache from "lib/styles/createEmotionCache";
->>>>>>> template/main
 
 const APP_NAME = "nextarter-chakra";
 
@@ -83,11 +64,7 @@ class MyDocument extends Document {
             sizes="180x180"
             href="/icons/apple-touch-icon.png"
           />
-<<<<<<< HEAD
-          <link rel="shortcut icon" href="/app-icon.png" /> */}
-=======
           <link rel="icon" href="/app-icon.png" /> */}
->>>>>>> template/main
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
