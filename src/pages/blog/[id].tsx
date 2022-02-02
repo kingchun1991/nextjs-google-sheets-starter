@@ -9,14 +9,14 @@ import {
   Tag,
   Wrap,
   WrapItem,
-  SpaceProps,
   useColorModeValue,
   Container,
   VStack,
 } from "@chakra-ui/react";
-import { GetStaticProps, GetStaticPaths } from "next";
-import { ParsedUrlQuery } from "querystring";
-import React from "react";
+import type { SpaceProps } from "@chakra-ui/react";
+import type { GetStaticProps, GetStaticPaths } from "next";
+import type { ParsedUrlQuery } from "querystring";
+import type React from "react";
 
 const csv2json = require("csvtojson");
 

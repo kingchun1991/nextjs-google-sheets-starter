@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 // import Card from "components/layout/Card";
 import Card2 from "components/layout/Card2";
 import { SimpleGrid } from "@chakra-ui/react";
