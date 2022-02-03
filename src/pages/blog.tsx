@@ -1,9 +1,8 @@
 import type { GetStaticProps } from "next";
 // import Card from "components/layout/Card";
-import Card2 from "components/layout/Card2";
+import Card2 from "lib/components/layout/Card2";
 import { SimpleGrid } from "@chakra-ui/react";
-
-const csv2json = require("csvtojson");
+import getData from "lib/data/googleSheet";
 
 function Blog(props: any) {
   const data = props;
@@ -27,13 +26,7 @@ function Blog(props: any) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTMf21Q2u8IXza55EClr4tlEn-hpHwoyZGxqS1Wy9xfjDRF5fy0MGjice0i2ONIaoIdp72pHQem7O6Z/pub?gid=0";
-  const csv = "&single=true&output=csv&headers=0";
-  const skipFirstRow = "&range=A2:ZZ";
-  const result = await fetch(url + csv + skipFirstRow);
-  const data = await result.text();
-  const records = await csv2json().fromString(data);
+  const records = await getData();
   return { props: { records } };
 };
 
