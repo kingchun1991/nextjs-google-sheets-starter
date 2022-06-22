@@ -9,9 +9,9 @@ import {
   chakra,
   Tooltip,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-import Link from "next/link";
 
 const data = {
   isNew: true,
@@ -30,7 +30,7 @@ interface RatingProps {
 
 function Rating({ rating, numReviews }: RatingProps) {
   return (
-    <Box d="flex" alignItems="center">
+    <Box display="flex" alignItems="center">
       {Array(5)
         .fill("")
         .map((_, i) => {
@@ -55,10 +55,16 @@ function Rating({ rating, numReviews }: RatingProps) {
   );
 }
 
-function ProductAddToCart(props: any) {
-  const data2 = props;
+interface CardProps {
+  key: string;
+  title: string;
+  imgSrc: string;
+  url: string;
+}
+
+function ProductAddToCart({ key, title, imgSrc, url }: CardProps) {
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+    <Flex id={key} p={50} w="full" alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue("white", "gray.800")}
         maxW="sm"
@@ -77,14 +83,10 @@ function ProductAddToCart(props: any) {
           />
         )}
 
-        <Image
-          src={data2.imgSrc}
-          alt={`Picture of ${data.name}`}
-          roundedTop="lg"
-        />
+        <Image src={imgSrc} alt={`Picture of ${data.name}`} roundedTop="lg" />
 
         <Box p="6">
-          <Box d="flex" alignItems="baseline">
+          <Box display="flex" alignItems="baseline">
             {data.isNew && (
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
                 New
@@ -97,9 +99,8 @@ function ProductAddToCart(props: any) {
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
-              isTruncated
             >
-              <Link href={`/blog/${data2.url}`}>{data2.title}</Link>
+              <Link href={`/blog/${url}`}>{title}</Link>
             </Box>
             <Tooltip
               label="Add to cart"
